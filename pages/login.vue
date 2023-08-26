@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {} from '@neko/hedera'
+
 definePageMeta({
   layout: 'login',
 })
