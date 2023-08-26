@@ -25,6 +25,16 @@ export default defineNuxtConfig({
     'notivue/notifications.css',
     'notivue/animations.css',
   ],
+  vite: {
+    define: {
+      'window.global': 'globalThis',
+    },
+    build: {
+      commonjsOptions: {
+        transformMixedEsModules: true,
+      },
+    },
+  },
   imports: {
     imports: [
       {

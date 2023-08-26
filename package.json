@@ -28,6 +28,7 @@
     "node": "18.17.1"
   },
   "dependencies": {
+    "@neko/hedera": "^0.0.10",
     "consola": "^3.2.3",
     "dayjs": "^1.11.9",
     "nanoid": "^4.0.2",
