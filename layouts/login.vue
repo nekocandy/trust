@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div>
+  <div class="bg-[#AC67A5]" h-screen px-8 py-12 font-serif>
     <slot />
   </div>
 </template>
