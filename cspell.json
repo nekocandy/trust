@@ -1,0 +1,17 @@
+{
+    "version": "0.2",
+    "ignorePaths": [],
+    "dictionaryDefinitions": [],
+    "dictionaries": [],
+    "words": [
+        "antfu",
+        "commitlint",
+        "consola",
+        "notivue",
+        "nuxt",
+        "unocss",
+        "vueuse"
+    ],
+    "ignoreWords": [],
+    "import": []
+}
