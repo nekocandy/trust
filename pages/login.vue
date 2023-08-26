@@ -5,7 +5,7 @@ definePageMeta({
 </script>
 
 <template>
-  <div h-full flex gap-4>
+  <div h-full w-full flex justify-center gap-4>
     <div class="flex flex-col items-start gap-8">
       <img class="h-24" src="~/assets/true.svg" alt="logo">
       <img h-48 src="~/assets/lines.svg" alt="">
