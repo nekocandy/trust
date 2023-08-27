@@ -1,13 +1,17 @@
 <script setup lang="ts">
 import { connectToWallet, initWallet, isWalletAvailable, isWalletConnected, userAccountId } from '@neko/wallet'
 
-await initWallet()
 definePageMeta({
   layout: 'login',
 })
 
+const router = useRouter()
+
+await initWallet()
 watch(userAccountId, (newAccountId) => {
   consola.info('newAccountId', newAccountId)
+  if (newAccountId)
+    router.push('/dashboard')
 })
 </script>
 
@@ -36,7 +40,10 @@ watch(userAccountId, (newAccountId) => {
             class="rounded-md bg-[#443643] px-8 py-2 text-lg text-white disabled:(cursor-not-allowed opacity-50)"
             @click="connectToWallet"
           >
-            <span v-if="isWalletAvailable">Sign In</span>
+            <span v-if="isWalletAvailable && !isWalletConnected">Sign In</span>
+            <span v-else-if="isWalletConnected">
+              Welcome, {{ userAccountId }}
+            </span>
             <span v-else>No wallet found</span>
           </button>
         </div>
