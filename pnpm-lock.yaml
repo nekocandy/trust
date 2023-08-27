@@ -6,14 +6,17 @@ settings:
 
 dependencies:
   '@neko/hedera':
-    specifier: ^0.0.10
-    version: 0.0.10(@hashgraph/sdk@2.32.0)(consola@3.2.3)(hashconnect@0.2.4)(vue@3.3.4)
+    specifier: ^0.0.15
+    version: 0.0.15(consola@3.2.3)(vue@3.3.4)
   consola:
     specifier: ^3.2.3
     version: 3.2.3
   dayjs:
     specifier: ^1.11.9
     version: 1.11.9
+  hashconnect:
+    specifier: ^0.2.4
+    version: 0.2.4
   nanoid:
     specifier: ^4.0.2
     version: 4.0.2
@@ -1684,18 +1687,23 @@ packages:
       - supports-color
     dev: true
 
-  /@neko/hedera@0.0.10(@hashgraph/sdk@2.32.0)(consola@3.2.3)(hashconnect@0.2.4)(vue@3.3.4):
-    resolution: {integrity: sha512-5L0Wuv04Zt6IR2eUsrXI65YfHNRx30kgScsSLRBiixcNeBgr76lYD5qmmMyq9ieGkiQ4akLhklf/p8iWbVBf0w==}
+  /@neko/hedera@0.0.15(consola@3.2.3)(vue@3.3.4):
+    resolution: {integrity: sha512-1fxjaMBkWLgaf5a+SIRBOlKCmPUmiWU29TryxgKA3SRgmvKQKKwkorOWOJ+Zmn1EGlope1kFwSLLZU823pq5Sg==}
     peerDependencies:
-      '@hashgraph/sdk': ^2.32.0
       consola: ^3.2.3
-      hashconnect: ^0.2.4
       vue: ^3.3.4
     dependencies:
       '@hashgraph/sdk': 2.32.0
       consola: 3.2.3
       hashconnect: 0.2.4
       vue: 3.3.4
+    transitivePeerDependencies:
+      - bufferutil
+      - debug
+      - expo
+      - expo-crypto
+      - expo-random
+      - utf-8-validate
     dev: false
 
   /@netlify/functions@2.0.2:

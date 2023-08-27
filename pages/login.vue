@@ -1,9 +1,13 @@
 <script setup lang="ts">
-import {} from '@neko/hedera'
+import { initWallet, isWalletAvailable, isWalletConnected } from '@neko/wallet'
 
 definePageMeta({
   layout: 'login',
 })
+
+await initWallet()
+
+consola.info('isWalletAvailable', isWalletAvailable)
 </script>
 
 <template>
@@ -26,7 +30,10 @@ definePageMeta({
         </div>
 
         <div>
-          <button class="rounded-md bg-[#443643] px-8 py-2 text-lg text-white">
+          <button
+            :disabled="isWalletConnected"
+            class="rounded-md bg-[#443643] px-8 py-2 text-lg text-white disabled:(cursor-not-allowed opacity-50)"
+          >
             Sign In
           </button>
         </div>

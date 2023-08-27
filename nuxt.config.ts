@@ -3,6 +3,11 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
     head: {
+      script: [
+        {
+          children: 'window.global = globalThis || global',
+        },
+      ],
       title: 'opinionated nuxt',
       meta: [
         {
@@ -34,6 +39,9 @@ export default defineNuxtConfig({
         transformMixedEsModules: true,
       },
     },
+  },
+  alias: {
+    '@neko/wallet': './magic/wallet/index.ts',
   },
   imports: {
     imports: [
