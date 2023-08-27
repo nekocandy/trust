@@ -9,6 +9,10 @@ const LINKS = [
     href: '/about',
   },
   {
+    name: 'Create',
+    href: '/create',
+  },
+  {
     name: 'Contact',
     href: '/contact',
   },
@@ -19,7 +23,9 @@ const LINKS = [
   <div class="flex flex-col">
     <div h-4 class="bg-[#A3B28F]" />
     <div flex items-center justify-between px-6 py-1 class="bg-[#8C3F845E]">
-      <img class="h-12" src="~/assets/true.svg" alt="">
+      <NuxtLink to="/dashboard">
+        <img class="h-12" src="~/assets/true.svg" alt="">
+      </NuxtLink>
       <div>
         <input class="w-full border-2 border-[#443643] bg-transparent px-2 placeholder:(text-center) focus:outline-none" placeholder="Search /" rounded-full type="text">
       </div>
