@@ -1,11 +1,14 @@
 <script setup lang="ts">
-import { isWalletAvailable, isWalletConnected } from '@neko/wallet'
+import { connectToWallet, initWallet, isWalletAvailable, isWalletConnected, userAccountId } from '@neko/wallet'
 
+await initWallet()
 definePageMeta({
   layout: 'login',
 })
 
-consola.info('isWalletAvailable', isWalletAvailable)
+watch(userAccountId, (newAccountId) => {
+  consola.info('newAccountId', newAccountId)
+})
 </script>
 
 <template>
@@ -31,6 +34,7 @@ consola.info('isWalletAvailable', isWalletAvailable)
           <button
             :disabled="!isWalletAvailable || isWalletConnected"
             class="rounded-md bg-[#443643] px-8 py-2 text-lg text-white disabled:(cursor-not-allowed opacity-50)"
+            @click="connectToWallet"
           >
             <span v-if="isWalletAvailable">Sign In</span>
             <span v-else>No wallet found</span>
