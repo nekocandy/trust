@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { initWallet, userAccountId } from '@neko/wallet'
 import { generateHederaURL, uploadToHedera } from '@neko/hedera-utils'
-import { currentChunk, currentFileId, currentFileTransactionId, fileUploadTransactions, totalChunks } from '@neko/hedera-sdk'
+import { addToTopic, currentChunk, currentFileId, currentFileTransactionId, fileUploadTransactions, totalChunks } from '@neko/hedera-sdk'
 
 const TOPIC_ID = '0.0.1075227'
 
+const router = useRouter()
 const hederaData = useHederaClient()
 const uploading = ref(false)
 const headline = ref('News')
@@ -14,8 +15,19 @@ await initWallet()
 
 async function createPost() {
   uploading.value = true
-  const fileData = await uploadToHedera(hederaData, content.value, nanoid())
+  const articleId = nanoid()
+  const fileData = await uploadToHedera(hederaData, content.value, articleId)
   consola.info('fileData', fileData)
+
+  await addToTopic(
+    hederaData,
+    TOPIC_ID,
+    JSON.stringify({
+      headline: headline.value,
+      fileId: fileData.fileId.fileId!.toString(),
+      articleId,
+    }),
+  )
 }
 
 onMounted(() => {
@@ -49,14 +61,19 @@ onMounted(() => {
   </div>
 
   <div v-else text-white>
-    <h1 text-3xl font-bold text-white underline="~">
-      Storing post on Hedera
-    </h1>
-    <div v-if="fileUploadTransactions.length" v-auto-animate h-60 pt-2>
-      <div v-for="transactionId in fileUploadTransactions" :key="transactionId" flex items-center gap-2>
+    <div v-if="fileUploadTransactions.length" v-auto-animate mt-4 h-60 pt-2>
+      <h1 class="pb-2 text-2xl font-bold font-mono">
+        Hedera Storage Txn Ids:
+      </h1>
+      <div v-for="transactionId in fileUploadTransactions" :key="transactionId" flex items-center gap-2 text-lg>
         <span font-bold text-lime>Txn ID:</span>
-        <a target="_blank" :href="generateHederaURL(transactionId)" underline> {{ transactionId }}</a>
+        <a font-mono target="_blank" :href="generateHederaURL(transactionId)" underline> {{ transactionId }}</a>
       </div>
+
+      <NuxtLink class="my-4 w-fit flex items-center gap-4 rounded bg-lime px-4 py-2 font-bold text-black" :to="`/post/${currentFileId}`">
+        Continue to post
+        <div i-ooui-arrow-next-ltr />
+      </NuxtLink>
     </div>
     <div v-else>
       Starting to upload <div i-eos-icons-loading />
