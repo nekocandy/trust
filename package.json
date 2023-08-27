@@ -14,6 +14,8 @@
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
     "@nuxt/devtools": "^0.8.0",
+    "@types/dompurify": "^3.0.2",
+    "@types/markdown-it": "^13.0.1",
     "@unocss/eslint-config": "^0.55.3",
     "@unocss/nuxt": "^0.55.3",
     "@unocss/reset": "^0.55.3",
@@ -35,6 +37,7 @@
     "dayjs": "^1.11.9",
     "dompurify": "^3.0.5",
     "hashconnect": "^0.2.4",
+    "markdown-it": "^13.0.1",
     "marked": "^7.0.5",
     "nanoid": "^4.0.2",
     "notivue": "^1.2.4"

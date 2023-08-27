@@ -17,7 +17,6 @@ async function createPost() {
   uploading.value = true
   const articleId = nanoid()
   const fileData = await uploadToHedera(hederaData, content.value, articleId)
-  consola.info('fileData', fileData)
 
   const txnId = await addToTopic(
     hederaData,

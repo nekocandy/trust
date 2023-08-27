@@ -9,6 +9,7 @@
         "commitlint",
         "composables",
         "consola",
+        "dompurify",
         "hashconnect",
         "hashgraph",
         "Hedera",
