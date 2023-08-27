@@ -27,7 +27,7 @@ const LINKS = [
       </div>
       <div flex gap-2>
         <NuxtLink v-for="link in LINKS" :key="link.href" :to="link.href">
-          <div class="rounded-full px-4 py-2 text-white hover:(bg-[#443643])">
+          <div class="rounded-full px-4 py-2 text-white">
             {{ link.name }}
           </div>
         </NuxtLink>
