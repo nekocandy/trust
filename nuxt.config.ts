@@ -10,7 +10,7 @@ export default defineNuxtConfig({
           children: 'window.global = globalThis || global',
         },
       ],
-      title: 'opinionated nuxt',
+      title: 'True.',
       meta: [
         {
           name: 'description',
@@ -20,7 +20,7 @@ export default defineNuxtConfig({
       link: [
         {
           rel: 'icon',
-          href: '/oink.svg',
+          href: '/favicon.png',
         },
       ],
     },
