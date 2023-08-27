@@ -3,6 +3,8 @@ import { initWallet, userAccountId } from '@neko/wallet'
 import { generateHederaURL, uploadToHedera } from '@neko/hedera-utils'
 import { currentChunk, currentFileId, currentFileTransactionId, fileUploadTransactions, totalChunks } from '@neko/hedera-sdk'
 
+const TOPIC_ID = '0.0.1075227'
+
 const hederaData = useHederaClient()
 const uploading = ref(false)
 const headline = ref('News')

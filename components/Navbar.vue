@@ -1,20 +1,16 @@
 <script setup lang="ts">
 const LINKS = [
   {
-    name: 'Home',
-    href: '/',
-  },
-  {
-    name: 'About',
-    href: '/about',
-  },
-  {
     name: 'Create',
     href: '/create',
   },
   {
-    name: 'Contact',
-    href: '/contact',
+    name: 'NFT',
+    href: '/nft',
+  },
+  {
+    name: 'Profile',
+    href: '/profile',
   },
 ]
 </script>
