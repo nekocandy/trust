@@ -8,6 +8,9 @@ dependencies:
   '@faker-js/faker':
     specifier: ^8.0.2
     version: 8.0.2
+  '@hashgraph/sdk':
+    specifier: ^2.32.0
+    version: 2.32.0
   '@neko/hedera':
     specifier: ^0.0.15
     version: 0.0.15(consola@3.2.3)(vue@3.3.4)
@@ -17,9 +20,15 @@ dependencies:
   dayjs:
     specifier: ^1.11.9
     version: 1.11.9
+  dompurify:
+    specifier: ^3.0.5
+    version: 3.0.5
   hashconnect:
     specifier: ^0.2.4
     version: 0.2.4
+  marked:
+    specifier: ^7.0.5
+    version: 7.0.5
   nanoid:
     specifier: ^4.0.2
     version: 4.0.2
@@ -4675,6 +4684,10 @@ packages:
       domelementtype: 2.3.0
     dev: true
 
+  /dompurify@3.0.5:
+    resolution: {integrity: sha512-F9e6wPGtY+8KNMRAVfxeCOHU0/NPWMSENNq4pQctuXRqqdEPW7q3CrLbR5Nse044WwacyjHGOMlvNsBe1y6z9A==}
+    dev: false
+
   /domutils@3.1.0:
     resolution: {integrity: sha512-H78uMmQtI2AhgDJjWeQmHwJJ2bLPD3GMmO7Zja/ZZh84wkm+4ut+IUnUdRa8uCGX88DiVx1j6FRe1XfxEgjEZA==}
     dependencies:
@@ -6870,6 +6883,12 @@ packages:
     resolution: {integrity: sha512-hdN1wVrZbb29eBGiGjJbeP8JbKjq1urkHJ/LIP/NY48MZ1QVXUsQBV1G1zvYFHn1XE06cwjBsOI2K3Ulnj1YXQ==}
     engines: {node: '>=8'}
     dev: true
+
+  /marked@7.0.5:
+    resolution: {integrity: sha512-lwNAFTfXgqpt/XvK17a/8wY9/q6fcSPZT1aP6QW0u74VwaJF/Z9KbRcX23sWE4tODM+AolJNcUtErTkgOeFP/Q==}
+    engines: {node: '>= 16'}
+    hasBin: true
+    dev: false
 
   /mdast-util-from-markdown@0.8.5:
     resolution: {integrity: sha512-2hkTXtYYnr+NubD/g6KGBS/0mFmBcifAsI0yIWRiRo0PjVs6SSOSOdtzbp6kSGnShDN6G5aWZpKQ2lWRy27mWQ==}
