@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { initWallet, userAccountId } from '@neko/wallet'
+import { uploadToHedera } from '@neko/hedera-utils'
+import { currentChunk, currentFileId, currentFileTransactionId, fileUploadTransactions, totalChunks } from '@neko/hedera-sdk'
 
 const hederaData = useHederaClient()
 const headline = ref('News')
@@ -9,6 +11,19 @@ await initWallet()
 
 consola.info('hederaData', hederaData)
 consola.info('content', userAccountId.value)
+
+async function createPost() {
+  const fileData = await uploadToHedera(hederaData, content.value, nanoid())
+  consola.info('fileData', fileData)
+}
+
+onMounted(() => {
+  totalChunks.value = 0
+  currentChunk.value = 0
+  currentFileId.value = null
+  currentFileTransactionId.value = null
+  fileUploadTransactions.value = []
+})
 </script>
 
 <template>
@@ -26,7 +41,7 @@ consola.info('content', userAccountId.value)
     </div>
 
     <div self-end>
-      <button class="bg-[#1D6D77]" rounded px-4 py-2 text-white>
+      <button class="bg-[#1D6D77]" rounded px-4 py-2 text-white @click="createPost">
         Create!
       </button>
     </div>

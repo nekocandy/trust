@@ -45,6 +45,7 @@ export default defineNuxtConfig({
   alias: {
     '@neko/wallet': './magic/wallet/index.ts',
     '@neko/hedera-sdk': './magic/sdk/index.ts',
+    '@neko/hedera-utils': './magic/utils/index.ts',
   },
   imports: {
     imports: [
