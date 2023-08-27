@@ -3,9 +3,8 @@
 </script>
 
 <template>
-  <div h-screen class="bg-[#AC67A5]" font-serif>
-    <Navbar />
-    <slot />
+  <div>
+    Hello!
   </div>
 </template>
 
