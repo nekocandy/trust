@@ -1,3 +1,0 @@
-# Nuxt
-
-opinionated nuxt config
