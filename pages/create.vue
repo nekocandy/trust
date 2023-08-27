@@ -10,9 +10,6 @@ const content = ref('# News')
 
 await initWallet()
 
-consola.info('hederaData', hederaData)
-consola.info('content', userAccountId.value)
-
 async function createPost() {
   uploading.value = true
   const fileData = await uploadToHedera(hederaData, content.value, nanoid())
