@@ -8,9 +8,13 @@ definePageMeta({
 const router = useRouter()
 
 await initWallet()
-watch(userAccountId, (newAccountId) => {
-  consola.info('newAccountId', newAccountId)
-  if (newAccountId)
+watch(isWalletConnected, (isConnected) => {
+  if (isConnected)
+    router.push('/dashboard')
+})
+
+onMounted(() => {
+  if (isWalletConnected.value)
     router.push('/dashboard')
 })
 </script>
