@@ -14,7 +14,7 @@ export default defineNuxtConfig({
       meta: [
         {
           name: 'description',
-          content: 'an opinionated nuxt starter template',
+          content: 'A decentralized space for the truth to reach the masses',
         },
       ],
       link: [
