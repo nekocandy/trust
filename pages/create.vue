@@ -5,7 +5,7 @@ import { addToTopic, currentChunk, currentFileId, currentFileTransactionId, file
 
 const TOPIC_ID = '0.0.1075227'
 
-const router = useRouter()
+const topicTxnId = ref<string | null>(null)
 const hederaData = useHederaClient()
 const uploading = ref(false)
 const headline = ref('News')
@@ -19,7 +19,7 @@ async function createPost() {
   const fileData = await uploadToHedera(hederaData, content.value, articleId)
   consola.info('fileData', fileData)
 
-  await addToTopic(
+  const txnId = await addToTopic(
     hederaData,
     TOPIC_ID,
     JSON.stringify({
@@ -28,6 +28,8 @@ async function createPost() {
       articleId,
     }),
   )
+
+  topicTxnId.value = txnId
 }
 
 onMounted(() => {
@@ -60,7 +62,11 @@ onMounted(() => {
     </div>
   </div>
 
-  <div v-else text-white>
+  <div v-else v-auto-animate text-white>
+    <div v-if="topicTxnId" flex items-center gap-2>
+      <span font-bold text-lime>Source of Truth Topic Txn ID:</span>
+      <a font-mono target="_blank" :href="generateHederaURL(topicTxnId)" underline> {{ topicTxnId }}</a>
+    </div>
     <div v-if="fileUploadTransactions.length" v-auto-animate mt-4 h-60 pt-2>
       <h1 class="pb-2 text-2xl font-bold font-mono">
         Hedera Storage Txn Ids:
