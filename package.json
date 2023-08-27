@@ -28,6 +28,7 @@
     "node": "18.17.1"
   },
   "dependencies": {
+    "@faker-js/faker": "^8.0.2",
     "@neko/hedera": "^0.0.15",
     "consola": "^3.2.3",
     "dayjs": "^1.11.9",

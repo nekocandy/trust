@@ -21,7 +21,7 @@ const LINKS = [
     <div flex items-center justify-between px-6 py-1 class="bg-[#8C3F845E]">
       <img class="h-12" src="~/assets/true.svg" alt="">
       <div>
-        <input class="w-full border-2 border-[#443643] bg-transparent placeholder:(text-center)" placeholder="Search /" rounded-full type="text">
+        <input class="w-full border-2 border-[#443643] bg-transparent px-2 placeholder:(text-center) focus:outline-none" placeholder="Search /" rounded-full type="text">
       </div>
       <div flex gap-2>
         <NuxtLink v-for="link in LINKS" :key="link.href" :to="link.href">
